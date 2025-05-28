@@ -4,11 +4,11 @@ import { useState } from 'react';
 export default function Register() {
   const [form, setForm] = useState({ name: '', email: '', mobile: '', password: '' });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const res = await fetch('/api/register', {
       method: 'POST',
