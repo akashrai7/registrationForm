@@ -11,9 +11,9 @@ export async function POST(req: Request) {
     const user = await prisma.user.create({
       data: { name, email, mobile, password },
     });
-
+// update error line
     return NextResponse.json(user, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ error: 'User creation failed' }, { status: 500 });
-  }
+  console.error("Something went wrong:", error); // ✅ error use हो गया
+} 
 }
