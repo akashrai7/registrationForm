@@ -17,7 +17,7 @@ const eslintConfig = [
 
 module.exports = {
   // ... existing config
-  ignorePatterns: ['app/generated/**'], // 👈 ये line जोड़ो
+  ignorePatterns: ['app/generated/**'], 
 };
 
 
