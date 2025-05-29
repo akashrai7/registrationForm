@@ -13,8 +13,10 @@ export async function POST(req: Request) {
       },
     });
     return new Response(JSON.stringify(user), { status: 201 });
-  } catch (error) {
-    console.error('Registration failed:', error); //  Use the error
-    return new Response(JSON.stringify({ error: 'Registration failed' }), { status: 500 });
+  } catch (error: unknown) {
+    console.error('Registration failed:', error); // error now typed correctly
+    return new Response(JSON.stringify({ error: 'Registration failed' }), {
+      status: 500,
+    });
   }
 }
