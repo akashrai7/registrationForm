@@ -14,6 +14,6 @@ export async function POST(req: Request) {
 // update error line
     return NextResponse.json(user, { status: 201 });
   } catch (error) {
-  console.error("Something went wrong:", error); // error use हो गया
+  console.error("Something went wrong:", error); // error use 
 } 
 }
